@@ -1,7 +1,10 @@
 # nginx-lua-static-merger
 
+<hr><br>
 
 # About
+
+详细教程请看：[http://homeway.me/2015/06/22/nginx-lua-static-merger/](http://homeway.me/2015/06/22/nginx-lua-static-merger/)
 
 `nginx-lua-static-merger`是一个基于openresty的模块，主要用于合并静态文件，减少http请求，加快静态文件访问速度的模块。
 
@@ -9,27 +12,26 @@
 
 `nginx-lua-static-merger`可以让你的js、css请求不要那么多，一个就够了。
 
+
 ![nginx-lua-static-merger](http://77l5jp.com1.z0.glb.clouddn.com/blog/2015-06-22-nginx-lua-static-merger-look.jpg)
 
 
 # 0x02.Usage
 
-## Openresty
+## install openresty
 
 [http://openresty.org/cn/](http://openresty.org/cn/)
 
-Openresty是国人写的开源项目，打包了标准的 Nginx 核心，很多的常用的第三方模块，以及它们的大多数依赖项。
-
-
 ```
-tar xzvf ngx_openresty-VERSION.tar.gz
-cd ngx_openresty-VERSION/
+wget http://openresty.org/download/ngx_openresty-1.7.10.1.tar.gz
+tar xzvf ngx_openresty-1.7.10.1.tar.gz
+cd ngx_openresty-1.7.10.1/
 ./configure
 make
 make install
 
 ```
-详细的安装教程还是去看官网吧。
+详细的安装教程请看官网。
 
 
 ## file path
@@ -70,21 +72,6 @@ Lua通过uri进行md5编码，判断cache是否存在，如果cache不存在，�
 
 <hr><br>
 
-# Effect
-
-下面是在不作处理情况请求多个js结果：
-
-![不做处理](http://77l5jp.com1.z0.glb.clouddn.com/blog/2015-06-22-normal_http_get.jpg)
-
-下面是第一次请求下，lua既要获取数据又要合并生成cache，属于冷数据：
-
-![cold_js_by_ngx_static_merger](http://77l5jp.com1.z0.glb.clouddn.com/blog/2015-06-22-cold_js_by_ngx_static_merger_2.jpg)
-
-![cold_js_by_ngx_static_merger](http://77l5jp.com1.z0.glb.clouddn.com/blog/2015-06-22-cold_js_by_ngx_static_merger_1.jpg)
-
-第二次访问就是热数据了，访问速度是增加的：
-
-![热数据](http://77l5jp.com1.z0.glb.clouddn.com/blog/2015-06-22-hot_js_time.jpg)
 
 # Version
 
@@ -92,31 +79,9 @@ Lua通过uri进行md5编码，判断cache是否存在，如果cache不存在，�
 
 * Beta Version
 
+<hr><br>
+
+
 # License
 
 ## GPL
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
