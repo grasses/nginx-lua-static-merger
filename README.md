@@ -16,7 +16,7 @@
 ![nginx-lua-static-merger](http://77l5jp.com1.z0.glb.clouddn.com/blog/2015-06-22-nginx-lua-static-merger-look.jpg)
 
 
-# 0x02.Usage
+# Usage
 
 ## install openresty
 
