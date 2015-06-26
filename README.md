@@ -13,7 +13,7 @@
 `nginx-lua-static-merger`可以让你的js、css请求不要那么多，一个就够了。
 
 
-</center><img alt="nginx-lua-static-merger" src="http://77l5jp.com1.z0.glb.clouddn.com/blog/2015-06-22-nginx-lua-static-merger-look.jpg"></center>
+<center><img alt="nginx-lua-static-merger" src="http://77l5jp.com1.z0.glb.clouddn.com/blog/2015-06-22-nginx-lua-static-merger-look.jpg"></center>
 
 <hr><br>
 
@@ -32,13 +32,12 @@ make
 make install
 
 ```
-详细的安装教程请看官网。
 
 
 ## file path
 
 	|--/usr/local/openresty/nginx
-	|						`--lua 
+	|						`--lua
 	|							`--nginx-lua-static-merger.lua
 	|						`--conf 
 	|							`--nginx.lua
@@ -69,7 +68,7 @@ Nginx在location通过 `content_by_lua_file` 把接下来的处理丢个Lua做�
 
 Lua通过uri进行md5编码，判断cache是否存在，如果cache不存在，循环分割、遍历uri，访问响应的路径，查找静态文件，存在则记录，最后写cache入文件，方便下次访问。
 
-</center><img alt="how nginx-lua-static-merger work" src="http://77l5jp.com1.z0.glb.clouddn.com/blog/2015-06-22-nginx-lua-static-merger-how-work.jpg"></center>
+<center><img alt="how nginx-lua-static-merger work" src="http://77l5jp.com1.z0.glb.clouddn.com/blog/2015-06-22-nginx-lua-static-merger-how-work.jpg"></center>
 
 
 <hr><br>
@@ -80,6 +79,11 @@ Lua通过uri进行md5编码，判断cache是否存在，如果cache不存在，�
 15.06.22
 
 * Beta Version
+
+15.06.26
+
+* Fix a bug (single static file err)
+
 
 <hr><br>
 
