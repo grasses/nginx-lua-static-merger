@@ -1,0 +1,24 @@
+#!/bin/bash
+
+prefix="/usr/local/openresty"
+nginx=$prefix"/nginx";
+
+echo "Install script will rewrite `nginx.conf`, do install? (y/n)"
+read y
+
+if [ $y != "y" ]; then 
+	echo "You choose no, thank you."
+	exit 1;
+fi
+
+sudo mkdir $nginx"/lua";
+sudo mkdir $nginx"/conf";
+
+echo "===================== move confgure file ==================="
+
+sudo cp -fr "lua/lua-nginx_static_merger.lua" $nginx"/lua/lua-nginx_static_merger.lua";
+sudo cp -fr "conf/nginx.conf" $nginx"/conf/nginx.conf";
+
+echo "===================== reload nginx ==================="
+sudo nginx -s reload;
+echo "===================== install completed ==================="

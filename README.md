@@ -33,6 +33,18 @@ make install
 
 ```
 
+## install nginx-lua-static-merger
+
+> $git clone https://github.com/grasses/nginx-lua-static-merger
+
+> $cd nginx-lua-static-merger
+
+> $chmod +x install
+
+> $./install
+
+Remember install openresty before run install script.
+
 
 ## file path
 
@@ -82,7 +94,10 @@ Lua通过uri进行md5编码，判断cache是否存在，如果cache不存在，�
 
 15.06.26
 
-* Fix a bug (single static file err)
+* Fix a bug (single static file error)
+
+* Add install script
+
 
 
 <hr><br>
