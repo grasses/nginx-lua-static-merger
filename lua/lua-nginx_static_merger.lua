@@ -1,5 +1,5 @@
 -- package 	: ngx_static_merger
--- version  : 15.07.01
+-- version  : 15.07.10
 -- author   : https://github.com/grasses
 
 local str = require "resty.string"
@@ -11,7 +11,7 @@ local static_root = ngx.var.static_root
 
 local M = {
     log_level = ngx.NOTICE,
-    _VERSION = "15.07.01",
+    _VERSION = "15.07.10",
 }
 
 --[[
@@ -84,7 +84,7 @@ end
 ]]
 M.generate_file = function(fpath)
     local data = ""
-    local parts = M.uri_split(uri.."", "")
+    local parts = M.uri_split(uri..";", ";")
     -- read table and get static data
     for key, value in ipairs(parts) do
         local fp1, err = io.open(static_root..value, "r")
